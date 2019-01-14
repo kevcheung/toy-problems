@@ -143,3 +143,12 @@ function findEvenIndex(arr){
 
 // The second value in the first integer array is 0, since the bus is empty in the first bus stop.
 
+var number = function(busStops){
+  let sleepers = 0;
+  for (i = 0; i < busStops.length; i++){
+    sleepers = (sleepers + busStops[i][0]) - busStops[i][1]
+  }
+  return sleepers
+}
+
+number([[3,0],[9,1],[4,10],[12,2],[6,1],[7,10]]);
