@@ -152,3 +152,8 @@ var number = function(busStops){
 }
 
 number([[3,0],[9,1],[4,10],[12,2],[6,1],[7,10]]);
+
+
+//UNIQUE IN ORDER
+//Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value next to each other and preserving the original order of elements
+
