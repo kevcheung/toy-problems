@@ -190,3 +190,24 @@ uniqueInOrder('AAAABBBCCDAABBB')
 // JS Note
 // JS students, like Python ones, must implement the diamond(n) method, and return null for invalid input.
 
+function diamond(n){
+    if (n % 2 == 0 || n < 1){
+      return null
+    }
+    let x = 0;
+    let add;
+    let diam = newLine(x, n);
+    while((x += 2) < n){
+      add = newLine(x / 2, n - x);
+      diam = add + diam + add;
+    }
+    return diam;
+  }
+  
+  function numOf(str, amount){
+    return Array(amount + 1).join(str);
+  }
+  
+  function newLine(space, star){
+    return numOf(' ', space) + numOf('*', star) + '\n';
+  }
