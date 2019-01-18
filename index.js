@@ -263,3 +263,12 @@ solution('XXI')
 
 // The tests will always use some integral number, so don't worry about that in dynamic typed languages.
 
+var isSquare = function(n){
+	if ((Math.sqrt(n)) % 1 === 0){
+		return true
+	}else{
+  	return false;
+	}
+}
+
+isSquare(25)
