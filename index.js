@@ -284,3 +284,17 @@ isSquare(25)
 // findSum(5) should return 8 (3 + 5)
 
 // findSum(10) should return 33 (3 + 5 + 6 + 9 + 10)
+
+function findSum(n) {
+	let sum = 0;
+for (let i = 0; i <= n; i++){
+	let fives = i % 5 === 0;
+	let threes = i % 3 === 0;
+	if (fives || threes){
+		sum += i
+		}
+	}
+	return sum
+}
+
+findSum(10)
