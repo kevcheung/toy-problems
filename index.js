@@ -191,23 +191,30 @@ uniqueInOrder('AAAABBBCCDAABBB')
 // JS students, like Python ones, must implement the diamond(n) method, and return null for invalid input.
 
 function diamond(n){
-    if (n % 2 == 0 || n < 1){
-      return null
-    }
-    let x = 0;
-    let add;
-    let diam = newLine(x, n);
-    while((x += 2) < n){
-      add = newLine(x / 2, n - x);
-      diam = add + diam + add;
-    }
-    return diam;
+  if (n % 2 == 0 || n < 1){
+    return null
   }
-  
-  function numOf(str, amount){
-    return Array(amount + 1).join(str);
+  let x = 0;
+  let add;
+  let diam = newLine(x, n);
+  while((x += 2) < n){
+    add = newLine(x / 2, n - x);
+    diam = add + diam + add;
   }
-  
-  function newLine(space, star){
-    return numOf(' ', space) + numOf('*', star) + '\n';
-  }
+  return diam;
+}
+
+function numOf(str, amount){
+  return Array(amount + 1).join(str);
+}
+
+function newLine(space, star){
+  return numOf(' ', space) + numOf('*', star) + '\n';
+}
+
+
+//ROMAN NUMERALS DECODER
+// Create a function that takes a Roman numeral as its argument and returns its value as a numeric decimal integer. You don't need to validate the form of the Roman numeral.
+
+// Modern Roman numerals are written by expressing each decimal digit of the number to be encoded separately, starting with the leftmost digit and skipping any 0s. So 1990 is rendered "MCMXC" (1000 = M, 900 = CM, 90 = XC) and 2008 is rendered "MMVIII" (2000 = MM, 8 = VIII). The Roman numeral for 1666, "MDCLXVI", uses each letter in descending order.
+
