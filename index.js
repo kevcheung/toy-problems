@@ -306,3 +306,25 @@ findSum(10)
 // Given two integers m, n (1 <= m <= n) we want to find all integers between m and n whose sum of squared divisors is itself a square. 42 is such a number.
 
 // The result will be an array of arrays or of tuples (in C an array of Pair) or a string, each subarray having two elements, first the number whose squared divisors is a square and then the sum of the squared divisors.
+
+function listSquared(m, n) {
+	let squareDivis = [];
+for(let i = m; i <= n; i++){
+	let sum = divis(i).reduce((sum, num) => sum + num * num, 0);
+	if(Number.isInteger(Math.sqrt(sum))){
+			squareDivis.push([i, sum])
+		}
+	}
+	return squareDivis
+}
+
+function divis(n){
+	let square = [];
+	for (let i = 1; i <= n; i++){
+		if(n % i){
+			continue
+		}
+		square.push(i)
+	}
+	return square
+}
