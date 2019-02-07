@@ -354,3 +354,29 @@ function duplicateCount(text) {
 // Can Vasya sell a ticket to each person and give the change if he initially has no money and sells the tickets strictly in the order people follow in the line?
 
 // Return YES, if Vasya can sell a ticket to each person and give the change with the bills he has at hand at that moment. Otherwise return NO.
+
+function tickets(arr){
+	let bill25 = 0
+	let bill50 = 0
+	for(let i = 0; i < arr.length; i++){
+		if(arr[i] === 25){
+				bill25++
+		}
+		if(arr[i] === 50){
+				bill25--
+				bill50++
+		}
+		if(arr[i] === 100){
+				if(bill50 === 0){
+					bill25 -= 3
+				}else{
+					bill50--
+					bill25--
+				}
+			}
+		if(bill25 < 0 || bill50 < 0){
+			return 'NO'
+		}
+	}
+	return 'YES'
+}
