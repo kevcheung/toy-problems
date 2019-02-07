@@ -388,3 +388,8 @@ function tickets(arr){
 // domainName("http://github.com/carbonfive/raygun") == "github" 
 // domainName("http://www.zombie-bites.com") == "zombie-bites"
 // domainName("https://www.cnet.com") == "cnet"
+
+function domainName(url){
+  let domain = url.replace(/http:\/\/|www.|https:\/\//gi, '')
+	return domain.slice(0, domain.indexOf('.'))
+}
