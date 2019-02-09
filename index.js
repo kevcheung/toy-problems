@@ -403,3 +403,15 @@ function domainName(url){
 // The input will always be valid (numbers will be an array of length 2 or greater, and all of the items will be numbers; target will always be the sum of two different items from that array).
 
 // Based on: http://oj.leetcode.com/problems/two-sum/
+
+function twoSum(numbers, target) {
+	let indices = []
+	for(let i = 0; i < numbers.length; i++){
+		for(let j = 0; j < i; j++){
+			if(numbers[i] + numbers[j] === target){
+				indices.push(j, i)
+			}
+		}
+	}
+	return indices
+}
