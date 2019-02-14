@@ -432,3 +432,20 @@ function twoSum(numbers, target) {
 // smallest(261235) --> [126235, 2, 0] or (126235, 2, 0) or "126235, 2, 0"
 // 126235 is the smallest number gotten by taking 1 at index 2 and putting it at index 0
 
+function smallest(n) {
+	let row = String(n).split("");
+	let min = [n, 0, 0],
+			test = [];
+	
+	for (var i = 0, length = row.length; i < length; i++) {
+		for (var j = 0; j < length; j++) {
+			test = row.slice(0, i).concat(row.slice(i + 1));
+			
+			if (Number(test.slice(0, j).concat(row[i], test.slice(j)).join("")) < min[0]) {
+				min = [Number(test.slice(0, j).concat(row[i], test.slice(j)).join("")), i, j];
+			}
+		}
+	}
+	
+	return min;
+}
