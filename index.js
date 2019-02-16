@@ -453,3 +453,35 @@ function smallest(n) {
 
 // MAZE RUNNER
 // You will be given a 2D array of the maze and an array of directions. Your task is to follow the directions given. If you reach the end point before all your moves have gone, you should return Finish. If you hit any walls or go outside the maze border, you should return Dead. If you find yourself still in the maze after using all the moves, you should return Lost.
+
+function mazeRunner(maze, directions) {
+	let position = []
+	for(let i = 0; i < maze.length; i++){
+		if (maze[i].indexOf(2) !== -1) {
+      position.push(i, maze[i].indexOf(2))
+    }
+	};
+  for(let i = 0; i < directions.length; i++){
+		if(directions[i] === 'N'){
+			position[0] -= 1
+		}else if(directions[i] === 'E'){
+			position[1] += 1
+		}else if(directions[i] === 'S'){
+			position[0] += 1
+		}else if(directions[i] === 'W'){
+			position[1] -= 1
+		}
+		if (position[0] === maze.length || position[0] < 0) {
+      return 'Dead'
+    }
+		if(maze[position[0]] === undefined || maze[position[1]] === undefined){
+			return 'Dead';
+		}
+		if(maze[position[0]][position[1]] === 1){
+			return 'Dead';
+		}else if(maze[position[0]][position[1]] === 3){
+			return 'Finish';
+		}
+	}
+	return 'Lost';
+}
