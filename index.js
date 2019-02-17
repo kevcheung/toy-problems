@@ -485,3 +485,7 @@ function mazeRunner(maze, directions) {
 	}
 	return 'Lost';
 }
+
+
+//CONSONANT VALUE
+// Given a lowercase string that has alphabetic characters only and no spaces, return the highest value of consonant substrings.
