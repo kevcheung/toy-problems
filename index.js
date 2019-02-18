@@ -489,3 +489,27 @@ function mazeRunner(maze, directions) {
 
 //CONSONANT VALUE
 // Given a lowercase string that has alphabetic characters only and no spaces, return the highest value of consonant substrings.
+
+function solve(s) {
+	let charArray = {};
+	let highest = 0;
+	let total = 0;
+	let vowels = ['a', 'e', 'i', 'o', 'u']
+	let consonant = s.split('')
+	for(let i = 1; i <= 26; i++){
+		charArray[String.fromCharCode(97 + (i - 1))] = i
+	}
+	consonant.forEach((elem, i) => {
+		if(!vowels.includes(elem)){
+			total += charArray[elem]
+			prevVowel = false
+		}else{
+			prevVowel = true;
+			if(highest < total){
+				highest = total
+			}
+			total = 0
+		}
+	})
+	return highest
+}
