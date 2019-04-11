@@ -534,3 +534,10 @@ function duplicateEncode(word) {
 
 //GETTING ALONG WITH INTEGER PARTITIONS
 //In number theory and combinatorics, a partition of a positive integer n, also called an integer partition, is a way of writing n as a sum of positive integers. Two sums that differ only in the order of their summands are considered the same partition.
+
+// unable to solve
+
+
+//ALPHABET WAR - AIRSTRIKE - LETTERS MASSACRE
+// Write a function that accepts "fight" string consists of only small letters and * which means a bomb drop place. Return who wins the fight after bombs are exploded. When the left side wins return "Left side wins!", when the right side wins return "Right side wins!", in other case return "Let's fight again!".
+
