@@ -571,3 +571,20 @@ function alphabetWar(fight) {
 //THE SHELL GAME
 //Your task is as follows. Given the shell that the ball starts under, and list of swaps, return the location of the ball at the end. All shells are indexed by the position they are in at the time.
 
+function find_the_ball(start, swaps) {
+	return swaps.reduce((ball, arr) => {
+		if (arr[0] === ball) {
+			ball = arr[1]
+		} else if (
+			arr[1] === ball
+		){
+			ball = arr[0]
+		}
+		return ball;
+	}, start)
+}
+
+swaps = [[0, 1], [1, 2], [1, 0]]
+find_the_ball(0, swaps)
+
+
