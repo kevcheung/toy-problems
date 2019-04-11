@@ -566,3 +566,8 @@ function alphabetWar(fight) {
 		? "Left side wins!"
 		: "Let's fight again!";
 }
+
+
+//THE SHELL GAME
+//Your task is as follows. Given the shell that the ball starts under, and list of swaps, return the location of the ball at the end. All shells are indexed by the position they are in at the time.
+
