@@ -591,3 +591,17 @@ find_the_ball(0, swaps)
 //LOWEST PRODUCT OF 4 CONSECUTIVE NUMBERS
 //Create a function that returns the lowest product of 4 consecutive digits in a number given as a string.
 
+function lowestProduct(input) {
+	let arr = input.split('').map(num => parseInt(num));
+	let lowest = [];
+	if (input.length < 4) {
+		return 'Number is too small'
+	} else {
+		for (let i = 0; i < arr.length; i++) {
+			lowest.push(arr[i] * arr[i + 1] * arr[i + 2] * arr[i + 3])
+		}
+		return lowest.sort((a, b) => a - b)[0]
+	}
+}
+
+
