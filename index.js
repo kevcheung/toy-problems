@@ -588,3 +588,6 @@ swaps = [[0, 1], [1, 2], [1, 0]]
 find_the_ball(0, swaps)
 
 
+//LOWEST PRODUCT OF 4 CONSECUTIVE NUMBERS
+//Create a function that returns the lowest product of 4 consecutive digits in a number given as a string.
+
