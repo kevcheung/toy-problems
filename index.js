@@ -605,3 +605,11 @@ function lowestProduct(input) {
 }
 
 
+//MEETING
+//Could you make a program that
+// - makes this string uppercase
+// - gives it sorted in alphabetical order by last name.
+
+function meeting(s){
+	return '(' + s.toUpperCase().split(';').map(elem => elem.split(':').reverse().join(', ')).sort().join(')(') + ')';
+}
