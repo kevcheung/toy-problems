@@ -647,3 +647,14 @@ function arrange(strng) {
 // -->[[1,2,3],[2,4,6],[3,6,9]]
 // Each value on the table should be equal to the value of multiplying the number in its first row times the number in its first column.
 
+function multiplicationTable(row, col) {
+	let table = [];
+	for (let i = 1; i <= row; i++) {
+		let arr = [i];
+		for (let j = 2; j <= col; j++) {
+			arr.push(i * j)
+		}
+		table.push(arr)
+	}
+	return table
+}
