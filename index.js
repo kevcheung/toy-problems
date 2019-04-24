@@ -617,12 +617,19 @@ function meeting(s){
 
 //up AND down
 // You are given a string s made up of substring s(1), s(2), ..., s(n) separated by whitespaces. Example: "after be arrived two My so"
-
 // #Task Return a string t having the following property:
-
 // length t(O) <= length t(1) >= length t(2) <= length t(3) >= length t(4) .... (P)
-
 // where the t(i) are the substring of s; you must respect the following rule:
-
 // at each step from left to right, you can only move either already consecutive strings or strings that became consecutive after a previous move. The number of moves should be minimum.
 
+function arrange(strng) {
+	let t = strng.split(' ')
+	let i = -1
+	let comp = i => (t[i + i % 2].length) > (t[i + 1 - i % 2].length);
+	while (++i < t.length - 1) {
+		if (comp(i)) {
+			[t[i], t[i + 1]] = [t[i + 1], t[i]]
+		}
+	}
+	return t.map((word, index) => word[`to${index % 2 ? 'Upper' : 'Lower'}Case`]()).join(' ');
+}
