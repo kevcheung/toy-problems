@@ -668,3 +668,17 @@ function multiplicationTable(row, col) {
 // The same array with 3 beggars would have in turn have produced a better out come for the second beggar: [5,7,3], as they will respectively take [1,4], [2,5] and [3].
 
 // Also note that not all beggars have to take the same amount of "offers", meaning that the length of the array is not necessarily a multiple of n; length can be even shorter, in which case the last beggers will of course take nothing (0).
+
+function beggars(values, n){
+	const arr = new Array(n);
+	if(n === 0){
+		return []
+	}
+	for (let i = 0; i < n; i++){
+		arr[i] = 0;
+	}
+	for (let i = 0; i < values.length; i++){
+		arr[i % n] += values[i]
+	}
+	return arr
+}
