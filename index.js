@@ -728,3 +728,10 @@ function findOdd(array) {
 // In addition to letters, digits and some punctuation, there are some special service codes, the most notorious of those is the international distress signal SOS (that was first issued by Titanic), that is coded as ···−−−···. These special codes are treated as single special characters, and usually are transmitted as separate words.
 // Your task is to implement a function that would take the morse code as input and return a decoded human-readable string.
 
+decodeMorse = function (morseCode) {
+	return morseCode.trim().split('   ')
+  .map(word => word.split(' ')
+  .map(letter => MORSE_CODE[letter])
+  .join(''))
+  .join(' ')
+}
